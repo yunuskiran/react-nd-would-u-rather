@@ -24,13 +24,16 @@ The app begins on a login page where you will have the option to select a user f
 ![login screen](https://github.com/yunuskiran/react-nd-would-u-rather/blob/master/screenshots/login.JPG)
 
 ### User Homepage
+Once the user is authenticated, the user will be able to toggle between the user's unanswered question and answered questions on his or her homepage, which is located at the root. The unanswered questions are shown by default.
+![Would Your Rather - React Redux app](https://github.com/yunuskiran/react-nd-would-u-rather/blob/master/screenshots/home.JPG)
 
-
-### New Question
-
+### New Poll
+The user will also have the ability to ask his or her own questions. After clicking "New Poll", the application show a form for new poll. He/She can enter the inputs and than a new poll should be created.
+![newpoll screen](https://github.com/yunuskiran/react-nd-would-u-rather/blob/master/screenshots/new-poll.JPG)
 
 ### Leaderboard
-
+Each user contains the user's name, user's avatar, number of questions asked, number of questions the user answered, and the total score.
+![leaderboard screen](https://github.com/yunuskiran/react-nd-would-u-rather/blob/master/screenshots/leader-board.JPG)
 
 ## Author
 * **Yunus KIRAN** [GitHub](https://github.com/yunuskiran)
