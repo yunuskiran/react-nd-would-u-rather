@@ -1,7 +1,10 @@
 # Would You Rather
 
 ## About
-I created this website as a project for React Nanodegree for Udacity. 
+I created this website as a project for React Nanodegree for Udacity. It builds with React, Redux and React Router(v6). The user ability to create questions, view questions, answer the questions and see that result. 
+
+![Would Your Rather - React Redux app](https://raw.githubusercontent.com/yunuskiran/react-nd-would-u-rather/master/screenshots/home.png)
+
 
 ## Prerequisites
 
