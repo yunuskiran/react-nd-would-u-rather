@@ -1,0 +1,3 @@
+export const LOAD_USERS = "LOAD_USERS";
+export const ASSIGN_QUESTION_TO_USER = "ASSIGN_QUESTION_TO_USER";
+export const SET_ANSWER = "SET_ANSWER";
