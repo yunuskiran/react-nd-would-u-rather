@@ -21,6 +21,7 @@ I created this website as a project for React Nanodegree for Udacity. It builds 
 ## How it works & Demo
 ### Login
 The app begins on a login page where you will have the option to select a user from a precomposed list. Once a user is chosen, the page will be redirected to the user homepage. 
+
 ![login screen](https://github.com/yunuskiran/react-nd-would-u-rather/blob/master/screenshots/login.JPG)
 
 ### User Homepage
