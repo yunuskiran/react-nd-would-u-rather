@@ -12,7 +12,7 @@ export const PrivateRoute = ({ Component }) => {
       </ConentLayout>
     );
   } else {
-    return <Navigate to="/" />;
+    return <Navigate to="/404" />;
   }
 };
 

@@ -13,8 +13,8 @@ I created this website as a project for React Nanodegree for Udacity. It builds 
 ### Installing
 1. Open terminal clone the project using `https://github.com/yunuskiran/reactnd-project-myreads-starter.git`
 2. Navigate to project directory
-3. Run the command `npm install` for necessary dependencies
-4. Run the command `npm start` to start the server.
+3. Run the command `npm install` or `yarn install` for necessary dependencies
+4. Run the command `npm start` or `yarn start` to start the server.
 5. Open your browser then navigate to http://localhost:3000/ on your local machine
 
 

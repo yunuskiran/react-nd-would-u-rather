@@ -47,7 +47,7 @@ function Nav() {
         <Menu inverted secondary>
           <Menu.Item name="home" as={NavLink} to="/" />
           <Menu.Item name="new poll" as={NavLink} to="/add" />
-          <Menu.Item name="leader board" as={NavLink} to="/leader-board" />
+          <Menu.Item name="leader board" as={NavLink} to="/leaderboard" />
           <Menu.Menu position="right">
             <DropdownMenu user={user} />
           </Menu.Menu>

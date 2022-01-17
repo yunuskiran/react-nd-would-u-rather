@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addAnswer } from "../redux/actions";
-import { useParams } from "react-router";
+import { Navigate, useParams } from "react-router";
 import { ResultCard } from "./ResultCard";
 import { AnswerCard } from "./AnswerCard";
 import { DetailCard } from "./DetailCard";
@@ -19,10 +19,12 @@ function Question(props) {
       />
     );
   } else {
+    debugger;
+
     let question = questions[question_id];
     let user = users[auth];
     if (!question) {
-      return <div>NotFound!</div>;
+      return <Navigate to="/questions/undefined_id" replace />;
     }
 
     if (Object.keys(user.answers).indexOf(question_id) !== -1) {
