@@ -62,7 +62,6 @@ function App(props) {
 }
 
 const Layout = (props) => {
-  debugger;
   const { auth } = props;
   return (
     <div>
