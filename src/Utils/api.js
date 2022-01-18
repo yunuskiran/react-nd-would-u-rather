@@ -3,6 +3,7 @@ import {
   _getQuestions,
   _saveQuestion,
   _saveQuestionAnswer,
+  _getQuestion,
 } from "./_DATA.js";
 
 export function getUsers() {
@@ -14,6 +15,12 @@ export function getUsers() {
 export function getQuestions() {
   return Promise.all([_getQuestions()]).then(([questions]) => ({
     questions,
+  }));
+}
+
+export function getQuestion(id) {
+  return Promise.all([_getQuestion(id)]).then(([question]) => ({
+    question,
   }));
 }
 

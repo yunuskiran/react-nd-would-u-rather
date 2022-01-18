@@ -137,6 +137,14 @@ export function _getQuestions() {
   });
 }
 
+export function _getQuestion(id) {
+  return new Promise((res, req) => {
+    setTimeout(() => {
+      res({ ...questions[id] });
+    }, 1000);
+  });
+}
+
 function formatQuestion({ optionOneText, optionTwoText, author }) {
   return {
     id: generateUID(),

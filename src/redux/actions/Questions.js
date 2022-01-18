@@ -3,7 +3,7 @@ import {
   ADD_QUESTION,
   ADD_ANSWER_TO_QUESTION,
 } from "../constants/Questions";
-import { getQuestions } from "../../Utils/api";
+import { getQuestions, getQuestion } from "../../Utils/api";
 import { _saveQuestion } from "../../Utils/_DATA";
 import { handleAssingQuesitonToUser } from "./Users";
 
@@ -47,4 +47,10 @@ export function hanleAddQuestionAnswer(auth, questionId, answer) {
     questionId,
     answer,
   };
+}
+
+export function getQuestionById(id) {
+  return getQuestion(id).then(({ question }) => {
+    return question;
+  });
 }

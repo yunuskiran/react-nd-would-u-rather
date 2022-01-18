@@ -19,8 +19,6 @@ function Question(props) {
       />
     );
   } else {
-    debugger;
-
     let question = questions[question_id];
     let user = users[auth];
     if (!question) {

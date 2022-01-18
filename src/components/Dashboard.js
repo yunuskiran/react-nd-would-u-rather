@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import { Tab } from "semantic-ui-react";
-import { loadQuestions } from "../redux/actions";
-import Loader from "../core/loader/Loader";
 import Question from "./Question";
 
 const panes = (props) => {
@@ -41,31 +39,18 @@ const panes = (props) => {
 
 function Dashboard(props) {
   const { auth } = props;
-  const dispatch = useDispatch();
-  const [loading, setLoading] = useState(true);
   const questions = useSelector((state) => state.questions);
   const users = useSelector((state) => state.users);
   const user = users[auth];
-  useEffect(() => {
-    dispatch(loadQuestions()).then(() => setLoading(false));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const answeredIds = Object.keys(user.answers);
+  const answered = Object.values(questions)
+    .filter((question) => answeredIds.includes(question.id))
+    .sort((a, b) => b.timestamp - a.timestamp);
+  const unanswered = Object.values(questions)
+    .filter((question) => !answeredIds.includes(question.id))
+    .sort((a, b) => b.timestamp - a.timestamp);
 
-  if (loading) {
-    return <Loader />;
-  } else {
-    const answeredIds = Object.keys(user.answers);
-    const answered = Object.values(questions)
-      .filter((question) => answeredIds.includes(question.id))
-      .sort((a, b) => b.timestamp - a.timestamp);
-    const unanswered = Object.values(questions)
-      .filter((question) => !answeredIds.includes(question.id))
-      .sort((a, b) => b.timestamp - a.timestamp);
-
-    return (
-      <Tab panes={panes({ answered, unanswered, users })} className="tab" />
-    );
-  }
+  return <Tab panes={panes({ answered, unanswered, users })} className="tab" />;
 }
 
 export default Dashboard;

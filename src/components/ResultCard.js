@@ -68,7 +68,7 @@ export function ResultCard(props) {
                 <Button
                   size="medium"
                   floated="right"
-                  onClick={() => navigate("/home")}
+                  onClick={() => navigate("/")}
                 >
                   Back to Home
                 </Button>

@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
-import { Navigate } from "react-router";
+import { Navigate, useLocation } from "react-router";
 import { Grid } from "semantic-ui-react";
 
 export const PrivateRoute = ({ Component }) => {
   const auth = useSelector((state) => state.auth);
-
+  const location = useLocation();
   if (auth) {
     return (
       <ConentLayout>
@@ -12,7 +12,13 @@ export const PrivateRoute = ({ Component }) => {
       </ConentLayout>
     );
   } else {
-    return <Navigate to="/404" />;
+    return (
+      <Navigate
+        to="/login"
+        replace
+        state={{ path: location.pathname }}
+      />
+    );
   }
 };
 

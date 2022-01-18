@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loadUser, setLogin } from "../redux/actions/index";
+import { setLogin } from "../redux/actions/index";
 import {
   Grid,
   Header,
@@ -9,24 +9,15 @@ import {
   Button,
   Message,
 } from "semantic-ui-react";
-import { Navigate } from "react-router";
-import Loader from "../core/loader/Loader";
+import { Navigate, useLocation } from "react-router";
 
 export const Login = () => {
   const dispatch = useDispatch();
+  const { state } = useLocation();
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState({ hidden: true, content: "" });
   const users = useSelector((state) => state.users);
   const auth = useSelector((state) => state.auth);
-  useEffect(() => {
-    if (!auth) {
-      dispatch(loadUser()).then(() => setLoading(false));
-    } else {
-      setLoading(false);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   function generateDropdownData() {
     return Object.values(users).map((user) => ({
@@ -52,10 +43,8 @@ export const Login = () => {
     dispatch(setLogin(user));
   }
 
-  return loading ? (
-    <Loader />
-  ) : auth ? (
-    <Navigate to="home" />
+  return auth ? (
+    <Navigate to={state?.path || "/"} />
   ) : (
     <ConentLayout>
       <Grid

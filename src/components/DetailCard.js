@@ -5,7 +5,6 @@ import { Card, Image, Button, Grid } from "semantic-ui-react";
 export const DetailCard = (props) => {
   let navigate = useNavigate();
   const { question, users, isAnswered } = props;
-
   return (
     <Card key={question.id} centered fluid>
       <Card.Content>
